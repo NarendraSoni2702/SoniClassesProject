@@ -1,11 +1,11 @@
-package Demo.Module;
+package freeCRMDemo.Module;
 
 import java.util.LinkedHashMap;
 
 import org.openqa.selenium.WebDriver;
 
-import Demo.PO.LoginPO;
 import basicframework.base.ConfigfileReader;
+import freeCRMDemo.PO.LoginPO;
 
 public class LoginModule {
 	WebDriver driver;
