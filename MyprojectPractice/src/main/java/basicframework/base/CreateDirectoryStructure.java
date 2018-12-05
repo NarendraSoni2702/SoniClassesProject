@@ -28,7 +28,7 @@ public class CreateDirectoryStructure {
 				throw new RuntimeException(htmlDirectory+" failed to create directory under "+subDirectory+" location");
 
 		// create Html folder
-		File screenShotDirectory= new File(htmlDirectory+"/ScreenShots");
+		File screenShotDirectory= new File(htmlDirectory+"/ScreenShot");
 		if(!screenShotDirectory.exists())
 			if(!screenShotDirectory.mkdir())
 				throw new RuntimeException(screenShotDirectory+" failed to create directory under "+htmlDirectory+" location");

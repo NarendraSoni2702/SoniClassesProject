@@ -21,7 +21,7 @@ import basicframework.utility.JavaScriptMethods;
 public class BasePageObject {
 	
 	WebDriver driver;
-	ExtentTest test;
+	protected ExtentTest test;
 	WebDriverWait wait;
 	WebElement elm;
 	

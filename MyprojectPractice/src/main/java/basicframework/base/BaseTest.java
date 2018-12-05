@@ -125,7 +125,8 @@ public class BaseTest {
 		}
 		
 		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 	}
 	
 	@AfterMethod
@@ -171,7 +172,7 @@ public class BaseTest {
 	@AfterTest(alwaysRun=true)
 	public void endTest(){
 		try{
-			driver.close();
+			//driver.close();
 		}catch(Exception e){
 			System.out.println(e.getCause());
 		}
