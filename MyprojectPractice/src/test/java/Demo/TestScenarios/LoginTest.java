@@ -20,5 +20,16 @@ public class LoginTest extends BaseTest{
 		lm.LaunchApplication();
 		lm.LoginToApplication(testCaseData);
 	}
+	
+	@Test
+	public void SelectMenuFromHomePage(){
+		InvokeBrowser();
+		LinkedHashMap<String, String> testCaseData=datareader.getTestCaseData("Login", 3);
+		LoginModule lm = new LoginModule(driver, configfileReader);
+		lm.LaunchApplication();
+		lm.LoginToApplication(testCaseData);
+	}
+	
+	
 
 }
