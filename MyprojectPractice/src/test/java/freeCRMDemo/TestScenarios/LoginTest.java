@@ -22,7 +22,7 @@ public class LoginTest extends BaseTest{
 	public void LoginToGmail() throws IOException, InterruptedException{
 		InvokeBrowser();
 		ExtentTest test=ExtentTestManager.createTest("LoginToApplication", "This test Case is responsible to validate login functionality", "smokeTest");
-		//LinkedHashMap<String, String> testCaseData=datareader.getTestCaseData("Login", 3);
+		
 		LoginModule lm = new LoginModule(driver, configfileReader,test);
 		lm.LaunchApplication();
 		lm.LoginToApplication();

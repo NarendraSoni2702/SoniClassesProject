@@ -28,7 +28,7 @@ public class BasePageObject {
 	public BasePageObject(WebDriver driver,ExtentTest test){
 		this.driver=driver;
 		this.test=test;
-		wait = new WebDriverWait(driver, 40);
+		//wait = new WebDriverWait(driver, 40);
 	}
 	
 	public String gatPageTitle(){
@@ -188,8 +188,8 @@ public class BasePageObject {
 	
 	public WebElement findElementsafely(final By locator){
 		FluentWait<WebDriver> wait = new FluentWait<WebDriver>(driver)
-					.withTimeout(60, TimeUnit.SECONDS)
-					.pollingEvery(2, TimeUnit.SECONDS)
+					.withTimeout(180, TimeUnit.SECONDS)
+					.pollingEvery(5, TimeUnit.SECONDS)
 					.ignoring(StaleElementReferenceException.class,NoSuchElementException.class);
 		
 		WebElement foo = wait.until(new Function<WebDriver,WebElement>(){
@@ -202,8 +202,8 @@ public class BasePageObject {
 	
 	public WebElement findElementsafely(final WebElement element){
 		FluentWait<WebDriver> wait = new FluentWait<WebDriver>(driver)
-					.withTimeout(60, TimeUnit.SECONDS)
-					.pollingEvery(2, TimeUnit.SECONDS)
+					.withTimeout(180, TimeUnit.SECONDS)
+					.pollingEvery(5, TimeUnit.SECONDS)
 					.ignoring(StaleElementReferenceException.class,NoSuchElementException.class);
 		
 		WebElement foo = wait.until(new Function<WebDriver,WebElement>(){

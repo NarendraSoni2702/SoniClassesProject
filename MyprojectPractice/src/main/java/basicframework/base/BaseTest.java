@@ -34,7 +34,7 @@ import basicframework.utility.SendEmail;
 public class BaseTest {
 	protected static String sourceFolder;
 	protected static ConfigfileReader configfileReader;
-	protected WebDriver driver;
+	protected static WebDriver driver;
 	protected static ExcelDataReadWrite datareader;
 	protected static String currentDateTime;
 	protected static String reportingDirectory;

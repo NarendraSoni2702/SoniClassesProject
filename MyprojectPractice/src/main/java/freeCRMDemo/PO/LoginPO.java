@@ -27,7 +27,6 @@ public class LoginPO extends BasePageObject{
 	public void setPassword(String pName){
 		typeOnElement(password,pName);
 	}
-	
 	public void clickOnLoginButton(){
 		clickOnElement(loginButton,"Yes");
 	}
