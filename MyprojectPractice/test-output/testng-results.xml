@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="2" passed="2">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Suite" duration-ms="1507650" started-at="2018-12-07T02:32:23Z" finished-at="2018-12-07T02:57:31Z">
+    <groups>
+    </groups>
+    <test name="Test" duration-ms="1507650" started-at="2018-12-07T02:32:23Z" finished-at="2018-12-07T02:57:31Z">
+      <class name="freeCRMDemo.TestScenarios.TaskTest">
+        <test-method status="PASS" signature="ClickToTaskTab()[pri:0, instance:freeCRMDemo.TestScenarios.TaskTest@316bcf94]" name="ClickToTaskTab" duration-ms="1455510" started-at="2018-12-07T08:03:00Z" finished-at="2018-12-07T08:27:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ClickToTaskTab -->
+        <test-method status="PASS" signature="postOperation(java.lang.reflect.Method, org.testng.ITestResult)[pri:0, instance:freeCRMDemo.TestScenarios.TaskTest@316bcf94]" name="postOperation" is-config="true" duration-ms="10601" started-at="2018-12-07T08:27:17Z" finished-at="2018-12-07T08:27:27Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void freeCRMDemo.TestScenarios.TaskTest.ClickToTaskTab() throws java.io.IOException,java.lang.InterruptedException]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[TestResult name=ClickToTaskTab status=SUCCESS method=TaskTest.ClickToTaskTab()[pri:0, instance:freeCRMDemo.TestScenarios.TaskTest@316bcf94] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- postOperation -->
+        <test-method status="PASS" signature="endClasses()[pri:0, instance:freeCRMDemo.TestScenarios.TaskTest@316bcf94]" name="endClasses" is-config="true" duration-ms="3696" started-at="2018-12-07T08:27:27Z" finished-at="2018-12-07T08:27:31Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- endClasses -->
+        <test-method status="PASS" signature="endTest()[pri:0, instance:freeCRMDemo.TestScenarios.TaskTest@316bcf94]" name="endTest" is-config="true" duration-ms="0" started-at="2018-12-07T08:27:31Z" finished-at="2018-12-07T08:27:31Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- endTest -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:freeCRMDemo.TestScenarios.TaskTest@316bcf94]" name="tearDown" is-config="true" duration-ms="84" started-at="2018-12-07T08:27:32Z" finished-at="2018-12-07T08:27:32Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- freeCRMDemo.TestScenarios.TaskTest -->
+      <class name="freeCRMDemo.TestScenarios.LoginTest">
+        <test-method status="PASS" signature="LoginToGmail()[pri:0, instance:freeCRMDemo.TestScenarios.LoginTest@437da279]" name="LoginToGmail" duration-ms="35651" started-at="2018-12-07T08:02:23Z" finished-at="2018-12-07T08:02:59Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LoginToGmail -->
+        <test-method status="PASS" signature="postOperation(java.lang.reflect.Method, org.testng.ITestResult)[pri:0, instance:freeCRMDemo.TestScenarios.LoginTest@437da279]" name="postOperation" is-config="true" duration-ms="416" started-at="2018-12-07T08:02:59Z" finished-at="2018-12-07T08:02:59Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void freeCRMDemo.TestScenarios.LoginTest.LoginToGmail() throws java.io.IOException,java.lang.InterruptedException]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[TestResult name=LoginToGmail status=SUCCESS method=LoginTest.LoginToGmail()[pri:0, instance:freeCRMDemo.TestScenarios.LoginTest@437da279] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- postOperation -->
+        <test-method status="PASS" signature="endClasses()[pri:0, instance:freeCRMDemo.TestScenarios.LoginTest@437da279]" name="endClasses" is-config="true" duration-ms="683" started-at="2018-12-07T08:02:59Z" finished-at="2018-12-07T08:03:00Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- endClasses -->
+      </class> <!-- freeCRMDemo.TestScenarios.LoginTest -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>
