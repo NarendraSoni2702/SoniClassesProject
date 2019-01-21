@@ -1,6 +1,7 @@
 package freeCRMDemo.TestScenarios;
 
 import java.io.IOException;
+import java.lang.reflect.Method;
 import java.util.LinkedHashMap;
 
 import org.openqa.selenium.By;
@@ -18,8 +19,8 @@ import freeCRMDemo.PO.LoginPO;
 public class LoginTest extends BaseTest{
 	
 	
-	@Test
-	public void LoginToGmail() throws IOException, InterruptedException{
+	@Test(dataProvider="InputData",description="SheetName=xyz")
+	public void LoginToGmail(Method m) throws IOException, InterruptedException{
 		InvokeBrowser();
 		ExtentTest test=ExtentTestManager.createTest("LoginToApplication", "This test Case is responsible to validate login functionality", "smokeTest");
 		

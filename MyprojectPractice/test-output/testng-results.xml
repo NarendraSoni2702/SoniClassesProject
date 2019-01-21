@@ -1,71 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="2" passed="2">
+<testng-results skipped="0" failed="1" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="1507650" started-at="2018-12-07T02:32:23Z" finished-at="2018-12-07T02:57:31Z">
+  <suite name="Default suite" duration-ms="56" started-at="2019-01-14T17:39:44Z" finished-at="2019-01-14T17:39:44Z">
     <groups>
     </groups>
-    <test name="Test" duration-ms="1507650" started-at="2018-12-07T02:32:23Z" finished-at="2018-12-07T02:57:31Z">
-      <class name="freeCRMDemo.TestScenarios.TaskTest">
-        <test-method status="PASS" signature="ClickToTaskTab()[pri:0, instance:freeCRMDemo.TestScenarios.TaskTest@316bcf94]" name="ClickToTaskTab" duration-ms="1455510" started-at="2018-12-07T08:03:00Z" finished-at="2018-12-07T08:27:16Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ClickToTaskTab -->
-        <test-method status="PASS" signature="postOperation(java.lang.reflect.Method, org.testng.ITestResult)[pri:0, instance:freeCRMDemo.TestScenarios.TaskTest@316bcf94]" name="postOperation" is-config="true" duration-ms="10601" started-at="2018-12-07T08:27:17Z" finished-at="2018-12-07T08:27:27Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[public void freeCRMDemo.TestScenarios.TaskTest.ClickToTaskTab() throws java.io.IOException,java.lang.InterruptedException]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[[TestResult name=ClickToTaskTab status=SUCCESS method=TaskTest.ClickToTaskTab()[pri:0, instance:freeCRMDemo.TestScenarios.TaskTest@316bcf94] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- postOperation -->
-        <test-method status="PASS" signature="endClasses()[pri:0, instance:freeCRMDemo.TestScenarios.TaskTest@316bcf94]" name="endClasses" is-config="true" duration-ms="3696" started-at="2018-12-07T08:27:27Z" finished-at="2018-12-07T08:27:31Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- endClasses -->
-        <test-method status="PASS" signature="endTest()[pri:0, instance:freeCRMDemo.TestScenarios.TaskTest@316bcf94]" name="endTest" is-config="true" duration-ms="0" started-at="2018-12-07T08:27:31Z" finished-at="2018-12-07T08:27:31Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- endTest -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:freeCRMDemo.TestScenarios.TaskTest@316bcf94]" name="tearDown" is-config="true" duration-ms="84" started-at="2018-12-07T08:27:32Z" finished-at="2018-12-07T08:27:32Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- freeCRMDemo.TestScenarios.TaskTest -->
+    <test name="Default test" duration-ms="56" started-at="2019-01-14T17:39:44Z" finished-at="2019-01-14T17:39:44Z">
       <class name="freeCRMDemo.TestScenarios.LoginTest">
-        <test-method status="PASS" signature="LoginToGmail()[pri:0, instance:freeCRMDemo.TestScenarios.LoginTest@437da279]" name="LoginToGmail" duration-ms="35651" started-at="2018-12-07T08:02:23Z" finished-at="2018-12-07T08:02:59Z">
+        <test-method status="FAIL" signature="LoginToGmail(java.lang.reflect.Method)[pri:0, instance:freeCRMDemo.TestScenarios.LoginTest@59d2103b]" name="LoginToGmail" duration-ms="0" started-at="2019-01-14T23:09:44Z" description="SheetName=xyz" data-provider="InputData" finished-at="2019-01-14T23:09:44Z">
+          <exception class="org.testng.TestNGException">
+            <message>
+              <![CDATA[
+Some DataProvider public java.lang.Object[][] basicframework.base.BaseTest.ExcelInputData(org.testng.annotations.ITestAnnotation) throws java.lang.Exception parameters unresolved:  at 1 type interface org.testng.annotations.ITestAnnotation
+]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.testng.TestNGException: 
+Some DataProvider public java.lang.Object[][] basicframework.base.BaseTest.ExcelInputData(org.testng.annotations.ITestAnnotation) throws java.lang.Exception parameters unresolved:  at 1 type interface org.testng.annotations.ITestAnnotation
+
+	at org.testng.internal.MethodInvocationHelper.invokeDataProvider(MethodInvocationHelper.java:128)
+	at org.testng.internal.Parameters.handleParameters(Parameters.java:429)
+	at org.testng.internal.Invoker.handleParameters(Invoker.java:1383)
+	at org.testng.internal.Invoker.createParameters(Invoker.java:1075)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1180)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:348)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:343)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:254)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.testng.TestNGException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- LoginToGmail -->
-        <test-method status="PASS" signature="postOperation(java.lang.reflect.Method, org.testng.ITestResult)[pri:0, instance:freeCRMDemo.TestScenarios.LoginTest@437da279]" name="postOperation" is-config="true" duration-ms="416" started-at="2018-12-07T08:02:59Z" finished-at="2018-12-07T08:02:59Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[public void freeCRMDemo.TestScenarios.LoginTest.LoginToGmail() throws java.io.IOException,java.lang.InterruptedException]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[[TestResult name=LoginToGmail status=SUCCESS method=LoginTest.LoginToGmail()[pri:0, instance:freeCRMDemo.TestScenarios.LoginTest@437da279] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- postOperation -->
-        <test-method status="PASS" signature="endClasses()[pri:0, instance:freeCRMDemo.TestScenarios.LoginTest@437da279]" name="endClasses" is-config="true" duration-ms="683" started-at="2018-12-07T08:02:59Z" finished-at="2018-12-07T08:03:00Z">
+        <test-method status="PASS" signature="endClasses()[pri:0, instance:freeCRMDemo.TestScenarios.LoginTest@59d2103b]" name="endClasses" is-config="true" duration-ms="19" started-at="2019-01-14T23:09:44Z" finished-at="2019-01-14T23:09:44Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- endClasses -->
+        <test-method status="PASS" signature="endTest()[pri:0, instance:freeCRMDemo.TestScenarios.LoginTest@59d2103b]" name="endTest" is-config="true" duration-ms="0" started-at="2019-01-14T23:09:44Z" finished-at="2019-01-14T23:09:44Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- endTest -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:freeCRMDemo.TestScenarios.LoginTest@59d2103b]" name="tearDown" is-config="true" duration-ms="5" started-at="2019-01-14T23:09:44Z" finished-at="2019-01-14T23:09:44Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
       </class> <!-- freeCRMDemo.TestScenarios.LoginTest -->
-    </test> <!-- Test -->
-  </suite> <!-- Suite -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>

@@ -1,6 +1,7 @@
 package freeCRMDemo.TestScenarios;
 
 import java.io.IOException;
+import java.lang.reflect.Method;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.Set;
@@ -23,7 +24,7 @@ public class TaskTest extends BaseTest
 {
 
 	@Test
-	public void ClickToTaskTab() throws IOException, InterruptedException{
+	public void ClickToTaskTab(Method m) throws IOException, InterruptedException{
 
 		// when we want to execute with one set of data
 		/*ExtentTest test=ExtentTestManager.createTest("ClickOnNewTask", "This test Case is responsible to validate Task Tab functionality", "Regression");

@@ -11,18 +11,22 @@ import java.util.concurrent.TimeUnit;
 
 import javax.mail.MessagingException;
 
+import org.junit.Ignore;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.testng.ITestContext;
+import org.testng.ITestNGListener;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.DataProvider;
+import org.testng.annotations.ITestAnnotation;
 
 import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.MediaEntityModelProvider;
@@ -39,24 +43,24 @@ public class BaseTest {
 	protected static String currentDateTime;
 	protected static String reportingDirectory;
 	protected static String htmlReportName;
-	
+
 	static {
-		
+
 		// fetch current date and time from calendar
 		Calendar calendar= Calendar.getInstance();
 		SimpleDateFormat formater= new SimpleDateFormat("dd_MM_yyyy_hh_mm_ss");
 		currentDateTime=formater.format(calendar.getTime());
-		
+
 		// find source folder
 		if(System.getProperty("user.dir").contains("target"))
 			sourceFolder = System.getProperty("user.dir").replace("/target", "");
 		else
 			sourceFolder = System.getProperty("user.dir");
-		
+
 		// read config file
 		configfileReader = new ConfigfileReader(sourceFolder);
 		configfileReader.loadPropertiesFile();
-		
+
 		// fetch applicatmon Name
 		String appName= configfileReader.getApplicationName();
 		// load excel Data
@@ -66,28 +70,34 @@ public class BaseTest {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
-		
+
+
 		// creating reporting structure
 		reportingDirectory=CreateDirectoryStructure.getReportingDirectory(
 				appName,
 				sourceFolder,currentDateTime);
-		
+
 		htmlReportName=reportingDirectory+appName+"_"+currentDateTime+".html";
-		
+
 		//initialise extent report
 		ExtentManager.createInstance(htmlReportName, appName, configfileReader.getEnvironment());
 	}
-	
-	
-	/*@DataProvider(name="InputData")
-	public Object[][] ExcelInputData(Method m) throws Exception{
-		String sheetname=m.getAnnotation(Test.class).description().toString().split(",")[0].split("=")[1].trim();
+
+
+	@DataProvider(name="InputData")
+	public Object[][] ExcelInputData(Method testMethod) throws Exception{
+		String sheetname = null;
+
+		String className = testMethod.getDeclaringClass().getName();
+		String methodName = testMethod.getName();
+		//TestDescription description = new TestDescription(className, methodName);
+		//sheetname=m.getDescription().toString().split(",")[0].split("=")[1].trim();
+
 		Object[][] data = new Object[datareader.getsheetData(sheetname).size()][2];  //initialize the array dimension
-		
+
 		Set<String> keyset = datareader.getsheetData(sheetname).keySet();
 		Iterator<String> key = keyset.iterator();
-		
+
 		int counter =0;
 		while(key.hasNext()){
 			String  TC_ID= key.next().toString();
@@ -97,10 +107,10 @@ public class BaseTest {
 		}
 		return data;
 	}
-	*/
-	
+
+
 	public void InvokeBrowser(){
-		
+
 		if(configfileReader.getBrowserName().equalsIgnoreCase("chrome")){
 			System.setProperty("webdriver.chrome.driver",sourceFolder+"/Drivers/chromedriver.exe");
 			System.setProperty("webdriver.chrome.args","--disable-logging");
@@ -123,17 +133,17 @@ public class BaseTest {
 			System.setProperty("webdriver.gecko.driver",sourceFolder+"/Drivers/geckodriver.exe");
 			driver = new FirefoxDriver();
 		}
-		
+
 		driver.manage().window().maximize();
 		driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 	}
-	
+
 	@AfterMethod
 	public void postOperation(Method m,ITestResult result) {
 		getResult(m,result);
 	}
-	
+
 	private void getResult(Method m,ITestResult result) {
 		Calendar calendar= Calendar.getInstance();
 		SimpleDateFormat formater= new SimpleDateFormat("dd_MM_yyyy_hh_mm_ss");
@@ -141,7 +151,7 @@ public class BaseTest {
 		String finalScreenShotName;
 		MediaEntityModelProvider mediaModel;
 		if(result.getStatus()==ITestResult.SUCCESS){
-			
+
 			try {
 				finalScreenShotName = ScreenShot.capture(driver,reportingDirectory+"ScreenShot",result.getName());
 				mediaModel = MediaEntityBuilder.createScreenCaptureFromPath("ScreenShot/"+finalScreenShotName).build();
@@ -149,9 +159,9 @@ public class BaseTest {
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
-			
+
 		}else if(result.getStatus()==ITestResult.SKIP){
-			
+
 		}else if(result.getStatus()==ITestResult.FAILURE){
 			try {
 				finalScreenShotName = ScreenShot.capture(driver,reportingDirectory+"ScreenShot",result.getName());
@@ -161,14 +171,14 @@ public class BaseTest {
 				e.printStackTrace();
 			}
 		}
-		
+
 	}
-	
+
 	@AfterClass(alwaysRun=true)
 	public void endClasses(){
 		ExtentManager.getInstance().flush();
 	}
-	
+
 	@AfterTest(alwaysRun=true)
 	public void endTest(){
 		try{
@@ -177,7 +187,7 @@ public class BaseTest {
 			System.out.println(e.getCause());
 		}
 	}
-	
+
 	@AfterSuite(alwaysRun = true)
 	public void tearDown(){
 		List<String> failedTestCases=ExtentManager.getFailedTestCasesList();

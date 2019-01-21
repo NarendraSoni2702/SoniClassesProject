@@ -24,6 +24,7 @@
 		</dependency>
 
 
+
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-java</artifactId>
@@ -55,6 +56,14 @@
 			<artifactId>ashot</artifactId>
 			<version>1.5.3</version>
 		</dependency>
+
+		<!-- for mongo dataBase connection-->
+		<dependency>
+			<groupId>org.mongodb</groupId>
+			<artifactId>mongo-java-driver</artifactId>
+			<version>3.9.1</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>
@@ -80,7 +89,7 @@
 						<suiteXmlFile>testNG.xml</suiteXmlFile>
 						<!-- <suiteXmlFile>src/test/resources/TestSuite/TestNG_Training.xml</suiteXmlFile> -->
 					</suiteXmlFiles>
-				 </configuration>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
